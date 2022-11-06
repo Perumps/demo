@@ -80,11 +80,9 @@ public class DemoService {
      */
     public String checkIfAnagram(String string1, String string2) {
 
-        boolean isAnagram = true;
-
         // If strings are of different length, then these are not anagrams
         if (string1.length() != string2.length()) {
-            isAnagram = false;
+            return "The strings are not anagrams!";
         }
 
         // If strings are of same length, convert these to arrays
@@ -98,15 +96,11 @@ public class DemoService {
 
         for (int i=0; i < string1.length(); i++) {
             if (string1Array[i] != string2Array[i]) {
-                isAnagram = false;
+                return "The strings are not anagrams!";
             }
         }
 
-        if (isAnagram) {
-            return "The strings are anagrams!";
-        } else {
-            return "The strings are not anagrams!";
-        }
+        return "The strings are anagrams!";
 
     }
 

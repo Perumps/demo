@@ -10,10 +10,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(DemoController.class)
@@ -25,43 +26,41 @@ public class DemoControllerTest {
     @Autowired
     MockMvc mvc;
 
-    /*@Test
-    public void generateShortUrlTest() throws Exception {
-        Mockito.when(service.generateAndSaveShortUrl(Mockito.anyString())).thenReturn("cde123f");
+    @Test
+    public void foobarTest() throws Exception {
+        Mockito.when(service.generateNumberList(Mockito.anyInt())).
+                thenReturn("Success! Please see console for output.");
 
-        MvcResult result = mvc.perform(post("/short")
-                .queryParam("url", "http://www.google.ca"))
+        MvcResult result = mvc.perform(get("/foobar")
+                        .queryParam("count", "100"))
                 .andReturn();
-        assertEquals("cde123f", result.getResponse().getContentAsString());
+        assertEquals("Success! Please see console for output.", result.getResponse().getContentAsString());
     }
 
     @Test
-    public void generateShortUrlMissingParmTest() throws Exception {
-        Mockito.when(service.generateAndSaveShortUrl(Mockito.anyString())).thenReturn("cde123f");
+    public void returnTopArrayElementsTest() throws Exception {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(2);
+        list.add(1);
+        Mockito.when(service.getTopArrayElements(Mockito.any(), Mockito.anyString())).
+                thenReturn(list);
 
-        MvcResult result = mvc.perform(post("/short"))
+        MvcResult result = mvc.perform(get("/sort")
+                        .queryParam("inputArray", "1,2,3").queryParam("top", "2"))
                 .andReturn();
-        assertEquals("Parameter 'url' is missing in the request",
-                result.getResponse().getContentAsString());
+        System.out.println(result.getResponse());
+        assertEquals("[2,1]", result.getResponse().getContentAsString());
     }
 
     @Test
-    public void retrieveLongUrlTest() throws Exception {
-        Mockito.when(service.retrieveLongUrl(Mockito.anyString())).thenReturn("http://www.google.ca");
+    public void anagramTest() throws Exception {
+        Mockito.when(service.checkIfAnagram(Mockito.anyString(), Mockito.anyString())).
+                thenReturn("The strings are anagrams!");
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/long")
-                        .queryParam("tiny", "cde123f"))
+        MvcResult result = mvc.perform(get("/anagram")
+                        .queryParam("string1", "ABC").queryParam("string2", "BAC"))
                 .andReturn();
-        assertEquals("http://www.google.ca", result.getResponse().getContentAsString());
+        assertEquals("The strings are anagrams!", result.getResponse().getContentAsString());
     }
 
-    @Test
-    public void retrieveLongUrlMissingParamTest() throws Exception {
-        Mockito.when(service.retrieveLongUrl(Mockito.anyString())).thenReturn("http://www.google.ca");
-
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/long"))
-                .andReturn();
-        assertEquals("Parameter 'tiny' is missing in the request",
-                result.getResponse().getContentAsString());
-    }*/
 }
