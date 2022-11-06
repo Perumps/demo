@@ -7,6 +7,20 @@
 	"item": [
 		{
 			"name": "Foobar_OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar OK\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.body(\"Success! Please see console for output.\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -32,6 +46,20 @@
 		},
 		{
 			"name": "Foobar_Non-Integer_Count",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar NonInteger Count\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid count value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -57,6 +85,20 @@
 		},
 		{
 			"name": "Foobar_Empty_Count",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar Empty Count\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid count value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -82,6 +124,20 @@
 		},
 		{
 			"name": "Foobar_Missing_Count",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar Missing Count\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Parameter 'count' is missing in the request\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -101,6 +157,20 @@
 		},
 		{
 			"name": "Foobar_Zero_Count",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar Zero Count\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid count value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -126,6 +196,20 @@
 		},
 		{
 			"name": "Foobar_Negative_Count",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Foobar Negative Count\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid count value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -151,6 +235,20 @@
 		},
 		{
 			"name": "Sort_OK_Limit<ArraySize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort OK Limit < Array Size\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.body(\"[4,3]\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -187,6 +285,20 @@
 		},
 		{
 			"name": "Sort_OK_Limit=ArraySize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort OK Limit = Array Size\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.body(\"[4,3,2,1]\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -223,6 +335,20 @@
 		},
 		{
 			"name": "Sort_OK_Limit>ArraySize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort OK Limit > Array Size\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.body(\"[4,3,2,1]\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -259,6 +385,20 @@
 		},
 		{
 			"name": "Sort_Non-Interger_Array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort NonInteger Array\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Input array contains non-numeric values\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -295,6 +435,20 @@
 		},
 		{
 			"name": "Sort_Non-Interger_Top",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort NonInteger Top < Array Size\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid top value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -339,7 +493,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "pm.test(\"Sort Empty Array\", function () {\r\n  pm.response.to.have.status(400);\r\n  pm.response.to.have.body(\"Request does not contain a valid input array\")\r\n});"
 				},
 				"url": {
 					"raw": "http://localhost:50000/sort?inputArray=&top=2",
@@ -367,6 +521,20 @@
 		},
 		{
 			"name": "Sort_Empty_Top",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort Empty Top\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request does not contain a valid top value\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -403,6 +571,20 @@
 		},
 		{
 			"name": "Sort_Missing_Top",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort Missing Top\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Parameter 'top' is missing in the request\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -435,6 +617,20 @@
 		},
 		{
 			"name": "Sort_Missing_Array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sort Missing Array\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Parameter 'inputArray' is missing in the request\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -479,7 +675,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "pm.test(\"Anagram True OK\", function () {\r\n  pm.response.to.have.status(200);\r\n  pm.response.to.have.body(\"The strings are anagrams!\")\r\n});"
 				},
 				"url": {
 					"raw": "http://localhost:50000/anagram?string1=ABC&string2=BAC",
@@ -507,6 +703,20 @@
 		},
 		{
 			"name": "Anagram_IsAnagramFalse_OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Anagram False OK\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"  pm.response.to.have.body(\"The strings are not anagrams!\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -543,6 +753,20 @@
 		},
 		{
 			"name": "Anagram_Blank_String1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Anagram Blank String 1\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request should contain two non-empty input strings\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -579,6 +803,20 @@
 		},
 		{
 			"name": "Anagram_Missing_String1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Anagram Missing String 1\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Parameter 'string1' is missing in the request\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -611,6 +849,20 @@
 		},
 		{
 			"name": "Anagram_Blank_String2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Anagram Blank String 2\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Request should contain two non-empty input strings\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -647,6 +899,20 @@
 		},
 		{
 			"name": "Anagram_Missing_String2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Anagram Missing String 2\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"  pm.response.to.have.body(\"Parameter 'string2' is missing in the request\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},

@@ -13,7 +13,7 @@ public class ValidationUtil {
 
     /**
      * Validates input Count
-     * Throws an exception when Count is non-numeric
+     * Throws an exception when Count is non-integer
      *
      * @param count - Count parameter from the input
      * @throws InvalidInputException Invalid Input Exception
