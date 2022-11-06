@@ -9,6 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ValidationUtilTest {
 
+    @Test
+    void validCount() {
+        assertDoesNotThrow(() -> {
+            ValidationUtil.validateCount("100");
+        });
+    }
+
    /* @Test
     void validLongUrl() {
         assertDoesNotThrow(() -> {
